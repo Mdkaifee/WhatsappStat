@@ -164,7 +164,7 @@ h1 {
 }
 
 .download-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .report-block {
@@ -226,12 +226,50 @@ h1 {
   font-weight: 700;
 }
 
-.footer-url {
-  margin: 0;
+.heart-icon {
+  color: #d62b4e;
+}
+
+.author-link {
+  color: #57b8ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.author-link:hover {
+  text-decoration: none;
+}
+
+.footer-site {
+  margin: 2px 0 0;
   font-family: "Baloo 2", sans-serif;
-  color: var(--teal);
-  font-weight: 800;
-  font-size: clamp(1.6rem, 2.3vw, 2.3rem);
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  font-weight: 700;
+}
+
+.corner-credit {
+  position: fixed;
+  right: 14px;
+  bottom: 10px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.84rem;
+  line-height: 1.1;
+}
+
+.corner-credit a {
+  color: inherit;
+}
+
+body.showing-stats .corner-credit {
+  display: none;
 }
 
 @media (max-width: 760px) {
@@ -258,5 +296,12 @@ h1 {
   .save-image-btn {
     width: min(100%, 340px);
     font-size: 1.25rem;
+  }
+
+  .corner-credit {
+    right: 8px;
+    bottom: 8px;
+    font-size: 0.72rem;
+    padding: 6px 8px;
   }
 }

@@ -78,6 +78,7 @@ fileInput.addEventListener("change", async (event) => {
     renderReport(stats);
     preUploadSectionEl.classList.add("hidden");
     resultsEl.classList.remove("hidden");
+    document.body.classList.add("showing-stats");
     statusEl.textContent = `Parsed ${formatNum(stats.totalMessages)} messages from ${formatNum(
       stats.participantCount
     )} participants.`;
