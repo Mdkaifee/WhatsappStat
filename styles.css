@@ -1,0 +1,262 @@
+:root {
+  --bg: #efefef;
+  --text: #232426;
+  --muted: #555a60;
+  --teal: #0b8f8e;
+  --teal-dark: #08706e;
+  --panel: #f8f8f8;
+  --border: #d8d8d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  width: min(940px, 94vw);
+  margin: 24px auto 40px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Baloo 2", sans-serif;
+}
+
+h1 {
+  margin: 6px 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1;
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 680px;
+  color: var(--muted);
+}
+
+.panel {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 14px;
+}
+
+.uploader {
+  padding: 14px;
+}
+
+.uploader h2 {
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.dropzone {
+  display: grid;
+  gap: 4px;
+  border: 2px dashed #bababa;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  background: #fdfdfd;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.dropzone:hover,
+.dropzone:focus-within {
+  border-color: var(--teal);
+}
+
+.dropzone input {
+  display: none;
+}
+
+.drop-title {
+  font-weight: 700;
+}
+
+.drop-hint {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.status {
+  min-height: 1.1em;
+  margin: 10px 2px 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.hidden {
+  display: none;
+}
+
+.results {
+  margin-top: 18px;
+}
+
+.report-actions {
+  text-align: center;
+  margin: 12px 0 24px;
+}
+
+.save-image-btn {
+  border: 0;
+  border-radius: 4px;
+  padding: 14px 28px;
+  background: #45a89b;
+  color: #ffffff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.save-image-btn:hover {
+  transform: translateY(-1px);
+}
+
+.save-image-btn:disabled {
+  cursor: default;
+  opacity: 0.75;
+}
+
+.download-hint {
+  margin: 18px 0 0;
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(1.2rem, 2.1vw, 1.95rem);
+  font-weight: 700;
+}
+
+.download-link {
+  display: inline-block;
+  margin-top: 2px;
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(1.35rem, 2.2vw, 2.15rem);
+  font-weight: 700;
+  color: #2991e7;
+  text-decoration: none;
+}
+
+.download-link:hover {
+  text-decoration: underline;
+}
+
+.report-block {
+  text-align: center;
+  margin: 30px 0 14px;
+}
+
+.report-number {
+  margin: 0;
+  color: var(--teal);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1;
+  font-family: "Baloo 2", sans-serif;
+}
+
+.report-number.emoji {
+  font-size: clamp(2.2rem, 6vw, 3.2rem);
+}
+
+.report-label {
+  margin: 6px 0 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.9rem);
+  line-height: 1.08;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+}
+
+.report-chart-section {
+  margin: 10px 0 24px;
+}
+
+.report-chart {
+  height: 380px;
+}
+
+.report-chart.pie {
+  height: 440px;
+}
+
+.report-chart.tall {
+  height: 660px;
+}
+
+.report-chart canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.report-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.footer-title {
+  margin: 0;
+  font-family: "Baloo 2", sans-serif;
+  font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+  font-weight: 700;
+}
+
+.footer-url {
+  margin: 0;
+  font-family: "Baloo 2", sans-serif;
+  color: var(--teal);
+  font-weight: 800;
+  font-size: clamp(1.6rem, 2.3vw, 2.3rem);
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(96vw, 620px);
+  }
+
+  .report-chart {
+    height: 320px;
+  }
+
+  .report-chart.pie {
+    height: 360px;
+  }
+
+  .report-chart.tall {
+    height: 540px;
+  }
+
+  .report-label {
+    font-size: clamp(1.1rem, 6vw, 1.6rem);
+  }
+
+  .save-image-btn {
+    width: min(100%, 340px);
+    font-size: 1.25rem;
+  }
+}

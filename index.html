@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhatsApp Stat</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta
+      name="description"
+      content="Parse and visualize WhatsApp chats fully in your browser."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="preUploadSection">
+        <header class="hero">
+          <p class="eyebrow">Client-side only</p>
+          <h1>WhatsApp Stat</h1>
+          <p class="subtitle">
+            Upload an exported WhatsApp chat <code>.txt</code> file and get instant
+            stats. Your data stays in your browser and never touches a server.
+          </p>
+        </header>
+
+        <section class="panel uploader" aria-labelledby="upload-title">
+          <h2 id="upload-title">Upload Chat Export</h2>
+          <label class="dropzone" for="chatFile">
+            <input type="file" id="chatFile" accept=".txt,text/plain" />
+            <span class="drop-title">Drop file here or click to browse</span>
+            <span class="drop-hint">Supports Android and iOS export formats</span>
+          </label>
+          <p id="status" class="status" aria-live="polite"></p>
+        </section>
+      </section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <section class="report-actions">
+          <button id="saveImageBtn" class="save-image-btn" type="button">SAVE AS IMAGE</button>
+          <p class="download-hint">Click On The Link If Download Doesn't Start Automatically</p>
+          <a id="manualDownloadLink" class="download-link" href="#">Click Here</a>
+        </section>
+
+        <div id="reportCapture">
+          <section class="report-block">
+            <p class="report-number" id="totalMessagesValue">0</p>
+            <p class="report-label">Messages Were Sent</p>
+          </section>
+
+          <section class="report-block">
+            <p class="report-number" id="topSenderValue">0</p>
+            <p class="report-label" id="topSenderLabel">Messages Were Sent By -</p>
+          </section>
+
+          <section class="report-chart-section">
+            <div class="report-chart pie">
+              <canvas id="participantPieChart"></canvas>
+            </div>
+          </section>
+
+          <section class="report-block">
+            <p class="report-number" id="peakHourValue">0</p>
+            <p class="report-label" id="peakHourLabel">Messages Were Sent Between -</p>
+          </section>
+
+          <section class="report-chart-section">
+            <div class="report-chart tall">
+              <canvas id="hourBarChart"></canvas>
+            </div>
+          </section>
+
+          <section class="report-block">
+            <p class="report-number emoji" id="topEmojiValue">🙂</p>
+            <p class="report-label" id="topEmojiLabel">Was Sent 0 Times</p>
+          </section>
+
+          <section class="report-chart-section">
+            <div class="report-chart">
+              <canvas id="emojiBarChart"></canvas>
+            </div>
+          </section>
+
+          <section class="report-block">
+            <p class="report-number" id="topWeekdayValue">0</p>
+            <p class="report-label" id="topWeekdayLabel">Messages Were Sent On -</p>
+          </section>
+
+          <section class="report-chart-section">
+            <div class="report-chart">
+              <canvas id="weekdayBarChart"></canvas>
+            </div>
+          </section>
+
+          <footer class="report-footer">
+            <p class="footer-title">Generated Using WhatsApp Stat</p>
+            <p class="footer-url">www.ristri.com/whatsappstat</p>
+          </footer>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
