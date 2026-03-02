@@ -200,10 +200,11 @@ function extractAuthorAndMessage(remainder) {
     };
   }
 
-  const trailingColonIndex = remainder.indexOf(":");
-  if (trailingColonIndex > 0) {
-    const author = remainder.slice(0, trailingColonIndex).trim();
-    const message = remainder.slice(trailingColonIndex + 1).trim();
+  const trimmed = remainder.trim();
+  if (trimmed.endsWith(":")) {
+    const trailingColonIndex = trimmed.lastIndexOf(":");
+    const author = trimmed.slice(0, trailingColonIndex).trim();
+    const message = trimmed.slice(trailingColonIndex + 1).trim();
 
     return {
       author: author || "Unknown",
